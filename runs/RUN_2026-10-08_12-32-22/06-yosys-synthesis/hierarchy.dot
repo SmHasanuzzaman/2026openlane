@@ -1,0 +1,14 @@
+digraph "inverter" {
+label="inverter";
+rankdir="LR";
+remincross=true;
+n3 [ shape=octagon, label="out", color="black", fontcolor="black"];
+n4 [ shape=octagon, label="clk", color="black", fontcolor="black"];
+n5 [ shape=octagon, label="in", color="black", fontcolor="black"];
+c8 [ shape=record, label="{{<p6> A}|$2\n$not|{<p7> Y}}",  ];
+p0 [shape=box, style=rounded, label="PROC $1\n/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:6.5-8.8", ];
+c8:p7:e -> p0:w [color="black", fontcolor="black", label=""];
+p0:e -> n3:w [color="black", fontcolor="black", label=""];
+n4:e -> p0:w [color="black", fontcolor="black", label=""];
+n5:e -> c8:p6:w [color="black", fontcolor="black", label=""];
+}

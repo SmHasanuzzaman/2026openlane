@@ -1,0 +1,99 @@
+{
+  "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+  "modules": {
+    "inverter": {
+      "attributes": {
+        "hdlname": "inverter",
+        "top": "00000000000000000000000000000001",
+        "src": "/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:1.1-9.10"
+      },
+      "ports": {
+        "in": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "out": {
+          "direction": "output",
+          "bits": [ 4 ]
+        }
+      },
+      "cells": {
+        "$not$/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:7$2": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:7.15-7.18"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "Y": [ 5 ]
+          }
+        },
+        "$procdff$3": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:6.5-8.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 3 ],
+            "D": [ 5 ],
+            "Q": [ 4 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\out[0:0]": {
+          "hide_name": 1,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:6.5-8.8"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:3.17-3.20"
+          }
+        },
+        "in": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:2.17-2.19"
+          }
+        },
+        "out": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:4.17-4.20"
+          }
+        }
+      }
+    }
+  }
+}

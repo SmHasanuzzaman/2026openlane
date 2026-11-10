@@ -1,0 +1,12 @@
+{
+  "DESIGN_NAME": "inverter",
+  "VERILOG_FILES": "dir::src/*.v",
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 100 100",
+  "FP_PDN_VPITCH": 25,
+  "FP_PDN_HPITCH": 25,
+  "PNR_SDC_FILE":     "dir::src/inverter.sdc",
+  "SIGNOFF_SDC_FILE": "dir::src/inverter.sdc"
+}

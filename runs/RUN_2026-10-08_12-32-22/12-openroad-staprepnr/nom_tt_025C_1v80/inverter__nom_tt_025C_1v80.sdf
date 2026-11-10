@@ -1,0 +1,51 @@
+(DELAYFILE
+ (SDFVERSION "3.0")
+ (DESIGN "inverter")
+ (DATE "Thu Oct  8 12:32:27 2026")
+ (VENDOR "Parallax")
+ (PROGRAM "STA")
+ (VERSION "2.6.0")
+ (DIVIDER .)
+ (VOLTAGE 1.800::1.800)
+ (PROCESS "1.000::1.000")
+ (TEMPERATURE 25.000::25.000)
+ (TIMESCALE 1ns)
+ (CELL
+  (CELLTYPE "inverter")
+  (INSTANCE)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT in _1_.A (0.000:0.000:0.000))
+    (INTERCONNECT clk _2_.CLK (0.000:0.000:0.000))
+    (INTERCONNECT _1_.Y _2_.D (0.000:0.000:0.000))
+    (INTERCONNECT _2_.Q out (0.000:0.000:0.000))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__inv_2")
+  (INSTANCE _1_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.018:0.018:0.018) (0.011:0.011:0.011))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__dfxtp_2")
+  (INSTANCE _2_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH CLK Q (0.273:0.273:0.273) (0.274:0.274:0.274))
+   )
+  )
+  (TIMINGCHECK
+    (HOLD (posedge D) (posedge CLK) (-0.031:-0.031:-0.031))
+    (HOLD (negedge D) (posedge CLK) (-0.040:-0.040:-0.040))
+    (SETUP (posedge D) (posedge CLK) (0.058:0.058:0.058))
+    (SETUP (negedge D) (posedge CLK) (0.106:0.106:0.106))
+    (WIDTH (posedge CLK) (0.197:0.197:0.197))
+    (WIDTH (negedge CLK) (0.165:0.165:0.165))
+  )
+ )
+)

@@ -1,0 +1,58 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_tt_025C_1v80 Corner ===================================
+
+Startpoint: clk (clock source 'core_clock')
+Endpoint: ANTENNA_1/DIODE (internal pin)
+Path Group: unconstrained
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+     2    0.007614    0.000000    0.000000    5.000000 v clk (in)
+                                                         clk (net)
+                      0.000252    0.000126    5.000126 v ANTENNA_1/DIODE (sky130_fd_sc_hd__diode_2)
+                                              5.000126   data arrival time
+---------------------------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 input port missing set_input_delay.
+  in
+Warning: There are 2 unconstrained endpoints.
+  out
+  _2_/D

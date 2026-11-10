@@ -1,0 +1,252 @@
+Reading timing models for corner nom_tt_025C_1v80…
+Reading cell library for the 'nom_tt_025C_1v80' corner at '/home/vlsiuser/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading top-level netlist at '/home/vlsiuser/vlsi/my_designs/inverter/runs/RUN_2026-10-08_12-32-22/51-openroad-fillinsertion/inverter.nl.v'…
+Linking design 'inverter' from netlist…
+Warning: /home/vlsiuser/vlsi/my_designs/inverter/runs/RUN_2026-10-08_12-32-22/51-openroad-fillinsertion/inverter.nl.v line 73, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found. Creating black box for TAP_TAPCELL_ROW_0_56.
+Warning: /home/vlsiuser/vlsi/my_designs/inverter/runs/RUN_2026-10-08_12-32-22/51-openroad-fillinsertion/inverter.nl.v line 168, module sky130_ef_sc_hd__decap_12 not found. Creating black box for FILLER_0_3.
+Warning: /home/vlsiuser/vlsi/my_designs/inverter/runs/RUN_2026-10-08_12-32-22/51-openroad-fillinsertion/inverter.nl.v line 170, module sky130_fd_sc_hd__fill_1 not found. Creating black box for FILLER_0_27.
+Warning: /home/vlsiuser/vlsi/my_designs/inverter/runs/RUN_2026-10-08_12-32-22/51-openroad-fillinsertion/inverter.nl.v line 474, module sky130_fd_sc_hd__fill_2 not found. Creating black box for FILLER_14_185.
+Reading design constraints file at '/home/vlsiuser/vlsi/my_designs/inverter/src/inverter.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+Reading top-level design parasitics for the 'nom_tt_025C_1v80' corner at '/home/vlsiuser/vlsi/my_designs/inverter/runs/RUN_2026-10-08_12-32-22/53-openroad-rcx/nom/inverter.nom.spef'…
+%OL_CREATE_REPORT min.rpt
+
+===========================================================================
+report_checks -path_delay min (Hold)
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+%OL_END_REPORT
+%OL_CREATE_REPORT max.rpt
+
+===========================================================================
+report_checks -path_delay max (Setup)
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+%OL_END_REPORT
+%OL_CREATE_REPORT checks.rpt
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: clk (clock source 'core_clock')
+Endpoint: ANTENNA_1/DIODE (internal pin)
+Path Group: unconstrained
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+     2    0.007247    0.000000    0.000000    5.000000 v clk (in)
+                                                         clk (net)
+                      0.000114    0.000057    5.000057 v ANTENNA_1/DIODE (sky130_fd_sc_hd__diode_2)
+                                              5.000057   data arrival time
+---------------------------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+%OL_METRIC_I design__max_slew_violation__count__corner:nom_tt_025C_1v80 0
+max fanout violation count 0
+%OL_METRIC_I design__max_fanout_violation__count__corner:nom_tt_025C_1v80 0
+max cap violation count 0
+%OL_METRIC_I design__max_cap_violation__count__corner:nom_tt_025C_1v80 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 input port missing set_input_delay.
+  in
+Warning: There are 2 unconstrained endpoints.
+  out
+  _2_/D
+%OL_END_REPORT
+%OL_CREATE_REPORT power.rpt
+
+===========================================================================
+ report_power
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Group                    Internal    Switching      Leakage        Total
+                            Power        Power        Power        Power (Watts)
+------------------------------------------------------------------------
+Sequential           4.292577e-06 1.124147e-07 8.438625e-12 4.405001e-06  98.0%
+Combinational        7.725728e-08 1.027183e-08 6.609900e-12 8.753572e-08   1.9%
+Clock                2.671224e-10 0.000000e+00 4.860140e-10 7.531364e-10   0.0%
+Macro                0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00   0.0%
+Pad                  0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00   0.0%
+------------------------------------------------------------------------
+Total                4.370102e-06 1.226866e-07 5.010625e-10 4.493289e-06 100.0%
+                            97.3%         2.7%         0.0%
+%OL_METRIC_F power__internal__total 4.37010157838813e-6
+%OL_METRIC_F power__switching__total 1.2268655780189874e-7
+%OL_METRIC_F power__leakage__total 5.010625248047518e-10
+%OL_METRIC_F power__total 4.493289452511817e-6
+
+%OL_END_REPORT
+%OL_CREATE_REPORT skew.min.rpt
+
+===========================================================================
+Clock Skew (Hold)
+============================================================================
+%OL_METRIC_F clock__skew__worst_hold__corner:nom_tt_025C_1v80 0.0
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Clock core_clock
+No launch/capture paths found.
+
+%OL_END_REPORT
+%OL_CREATE_REPORT skew.max.rpt
+
+===========================================================================
+Clock Skew (Setup)
+============================================================================
+%OL_METRIC_F clock__skew__worst_setup__corner:nom_tt_025C_1v80 0.0
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Clock core_clock
+No launch/capture paths found.
+
+%OL_END_REPORT
+%OL_CREATE_REPORT ws.min.rpt
+
+===========================================================================
+Worst Slack (Hold)
+============================================================================
+%OL_METRIC_F timing__hold__ws__corner:nom_tt_025C_1v80 1.0000000433293989e+39
+nom_tt_025C_1v80: 1.0000000433293989e+39
+%OL_END_REPORT
+%OL_CREATE_REPORT ws.max.rpt
+
+===========================================================================
+Worst Slack (Setup)
+============================================================================
+%OL_METRIC_F timing__setup__ws__corner:nom_tt_025C_1v80 1.0000000433293989e+39
+nom_tt_025C_1v80: 1.0000000433293989e+39
+%OL_END_REPORT
+%OL_CREATE_REPORT tns.min.rpt
+
+===========================================================================
+Total Negative Slack (Hold)
+============================================================================
+%OL_METRIC_F timing__hold__tns__corner:nom_tt_025C_1v80 0.0
+nom_tt_025C_1v80: 0.0
+%OL_END_REPORT
+%OL_CREATE_REPORT tns.max.rpt
+
+===========================================================================
+Total Negative Slack (Setup)
+============================================================================
+%OL_METRIC_F timing__setup__tns__corner:nom_tt_025C_1v80 0.0
+nom_tt_025C_1v80: 0.0
+%OL_END_REPORT
+%OL_CREATE_REPORT wns.min.rpt
+
+===========================================================================
+Worst Negative Slack (Hold)
+============================================================================
+%OL_METRIC_F timing__hold__wns__corner:nom_tt_025C_1v80 0
+nom_tt_025C_1v80: 0
+%OL_END_REPORT
+%OL_CREATE_REPORT wns.max.rpt
+
+===========================================================================
+Worst Negative Slack (Setup)
+============================================================================
+%OL_METRIC_F timing__setup__wns__corner:nom_tt_025C_1v80 0.0
+nom_tt_025C_1v80: 0.0
+%OL_END_REPORT
+%OL_CREATE_REPORT violator_list.rpt
+
+===========================================================================
+Violator List
+============================================================================
+%OL_METRIC_I timing__hold_vio__count__corner:nom_tt_025C_1v80 0
+%OL_METRIC_F timing__hold_r2r__ws__corner:nom_tt_025C_1v80 inf
+%OL_METRIC_I timing__hold_r2r_vio__count__corner:nom_tt_025C_1v80 0
+%OL_METRIC_I timing__setup_vio__count__corner:nom_tt_025C_1v80 0
+%OL_METRIC_F timing__setup_r2r__ws__corner:nom_tt_025C_1v80 inf
+%OL_METRIC_I timing__setup_r2r_vio__count__corner:nom_tt_025C_1v80 0
+%OL_END_REPORT
+%OL_CREATE_REPORT unpropagated.rpt
+%OL_END_REPORT
+%OL_CREATE_REPORT clock.rpt
+Clock: core_clock
+Sources: clk 
+Generated: no
+Virtual: yes
+Propagated: no
+Period: 10.000000
+
+===========================================================================
+report_clock_properties
+============================================================================
+Clock                   Period          Waveform
+----------------------------------------------------
+core_clock           10.000000    0.000000  5.000000
+
+===========================================================================
+report_clock_latency
+============================================================================
+Clock core_clock
+rise -> rise
+    min     max
+0.000000 0.000000 source latency
+0.000068         network latency _2_/CLK
+        0.000068 network latency _2_/CLK
+---------------
+0.000068 0.000068 latency
+        0.000000 skew
+
+fall -> fall
+    min     max
+0.000000 0.000000 source latency
+0.000064         network latency _2_/CLK
+        0.000064 network latency _2_/CLK
+---------------
+0.000064 0.000064 latency
+        0.000000 skew
+
+
+
+===========================================================================
+report_clock_min_period
+============================================================================
+core_clock period_min = 0.00 fmax = inf
+%OL_END_REPORT
+Writing SDF files for all corners…
+Removing Clock latencies before writing libs…
+Writing timing models for all corners…
+Writing timing models for the nom_tt_025C_1v80 corner to /home/vlsiuser/vlsi/my_designs/inverter/runs/RUN_2026-10-08_12-32-22/54-openroad-stapostpnr/nom_tt_025C_1v80/inverter__nom_tt_025C_1v80.lib…

@@ -1,0 +1,64 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+Startpoint: _2_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: out (output port)
+Path Group: unconstrained
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+     1    0.005847    0.000000    0.000000    0.000000 ^ clk (in)
+                                                         clk (net)
+                      0.000089    0.000044    0.000044 ^ _2_/CLK (sky130_fd_sc_hd__dfxtp_2)
+     1    0.003862    0.034078    0.292375    0.292419 ^ _2_/Q (sky130_fd_sc_hd__dfxtp_2)
+                                                         out (net)
+                      0.034078    0.000031    0.292451 ^ out (out)
+                                              0.292451   data arrival time
+---------------------------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+Writing metric design__max_slew_violation__count__corner:nom_tt_025C_1v80: 0
+max fanout violation count 0
+Writing metric design__max_fanout_violation__count__corner:nom_tt_025C_1v80: 0
+max cap violation count 0
+Writing metric design__max_cap_violation__count__corner:nom_tt_025C_1v80: 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There is 1 input port missing set_input_delay.
+  in
+Warning: There are 2 unconstrained endpoints.
+  out
+  _2_/D

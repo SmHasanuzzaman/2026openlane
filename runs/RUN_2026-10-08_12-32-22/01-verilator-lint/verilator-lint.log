@@ -1,0 +1,6 @@
+%Warning-BLKSEQ: /home/vlsiuser/vlsi/my_designs/inverter/src/inverter.v:7:13: Blocking assignment '=' in sequential logic process
+                                                                            : ... Suggest using delayed assignment '<='
+    7 |         out = ~in;    
+      |             ^
+                 ... For warning description see https://verilator.org/warn/BLKSEQ?v=5.018
+                 ... Use "/* verilator lint_off BLKSEQ */" and lint_on around source to disable this message.

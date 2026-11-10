@@ -1,0 +1,2 @@
+# Vivado generated files
+*.jou *.log *.str *.pb *.dcp *.bit *.hwdef .Xil/ *.cache/ *.hw/ *.ip_user_files/ *.runs/ *.sim/
